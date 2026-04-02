@@ -11,7 +11,7 @@ int main(){
     while(lo<=hi){
         int mid = lo+(hi-lo/2);
         if(arr[mid]==x){
-            if(arr[mid-1]!=x) {
+            if(arr[mid-1]!=x) {   //If there is no such element in its left
                 flag = true;
                 cout<<mid;
                 break;
@@ -19,7 +19,7 @@ int main(){
            else hi=mid-1;  //arr[mid-1] = x
         }
         else if(arr[mid]<x) lo = mid+1;
-         else hi = mid - 1;
+        else hi = mid - 1;
         
     }
     if(flag==false)cout<<-1;
