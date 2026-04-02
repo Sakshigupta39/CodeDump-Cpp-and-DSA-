@@ -1,5 +1,5 @@
 #include <iostream>
-#include <climits>
+#include <vector>
 using namespace std;
 int main(){
     int m;
@@ -8,7 +8,9 @@ int main(){
     int n;
     cout<<"Enter no. of columns : ";
     cin>>n;
-    int arr[m][n];
+    // int arr[m][n];      // variable length array not allowed in c++
+
+    vector<vector<int>> arr(m, vector<int>(n));    //Use this instead
     for(int i=0;i<m;i++){
         for(int j=0;j<n;j++){
             cin>>arr[i][j];
@@ -18,9 +20,9 @@ int main(){
     int sum = 0;
      for(int i=0;i<m;i++){
         for(int j=0;j<n;j++){
-           sum+=arr[i][j];
+           sum += arr[i][j];
         }
     }
-     cout<<"Sum of all elements = "<<sum;
+    cout<<"Sum of all elements = "<<sum;
     
 }
